@@ -48,3 +48,50 @@ pen.penup()
 pen.hideturtle()  # we dont wanna see the turtle
 pen.goto(0, 260)
 pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
+
+# Fuctions for the mobility
+def paddle_a_up():
+    y = paddle_a.ycor()  # this returns the y coordinate
+    y += 20
+    paddle_a.sety(y)
+
+
+def paddle_a_down():
+    y = paddle_a.ycor()  # this returns the y coordinate
+    y -= 20
+    paddle_a.sety(y)
+
+
+def paddle_a_right():
+    x = paddle_a.xcor()  # this returns the y coordinate
+    x += 20
+    paddle_a.setx(x)
+
+
+def paddle_a_left():
+    x = paddle_a.xcor()  # this returns the y coordinate
+    x -= 20
+    paddle_a.setx(x)
+
+
+def paddle_b_up():
+    y = paddle_b.ycor()  # this returns the y coordinate
+    y += 20
+    paddle_b.sety(y)
+
+
+def paddle_b_down():
+    y = paddle_b.ycor()  # this returns the y coordinate
+    y -= 20
+    paddle_b.sety(y)
+
+
+# keyboard binding
+wn.listen()  # listen for the keyboard input
+wn.onkeypress(paddle_a_up, "w")  # when the user presses w , call the function paddle a up
+wn.onkeypress(paddle_a_down, "s")
+wn.onkeypress(paddle_a_right, "d")
+wn.onkeypress(paddle_a_left, "a")
+
+wn.onkeypress(paddle_b_up, "Up")  # when the user presses w , call the function paddle a up
+wn.onkeypress(paddle_b_down, "Down")
